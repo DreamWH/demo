@@ -1,10 +1,10 @@
 package com.example.demo.Controller;
 
-import net.sf.json.JSON;
+
 import net.sf.json.JSONArray;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
+
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,7 +40,7 @@ public class HelloController {
         List<Object> list1 = new ArrayList<Object>();
         HashMap<String,Object> maps1 = new HashMap<String, Object>();
 
-        maps1.put("conpany", "河南电力");
+        maps1.put("company", "河南电力");
         maps1.put("section", "郑州分公司");
         maps1.put("admin", "123123");
         maps1.put("name", "张华凤");
