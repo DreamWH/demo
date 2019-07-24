@@ -1,43 +1,20 @@
-package com.example.demo.Controller;
+package com.example.demo.controller;
 
 
-import net.sf.json.JSONArray;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 
 @CrossOrigin
-@RestController
+@Controller
 public class HelloController {
 
-   /* @RequestMapping(value = "/hello1",method = RequestMethod.GET)
-    public String hello1(@RequestParam String name, HttpServletResponse response) {
+    @RequestMapping(value = "/hello2")
+    public @ResponseBody Object hello2( HttpServletResponse response) {
         System.out.println("ok");
-        List<Object> list = new ArrayList<Object>();
-        HashMap<String,Object> maps = new HashMap<String, Object>();
-
-        maps.put("conpany", "河南电力");
-        maps.put("section", "郑州分公司");
-        maps.put("admin", "123123");
-        maps.put("name", "张华凤");
-        maps.put("tel", "954127004");
-        maps.put("phone", "15056993012");
-
-        list.add(maps);
-        String jsonStr = JSON.toJSON(list).toString();
-        response.setHeader("Access-Control-Allow-Origin", "*");
-        return jsonStr;
-    }*/
-
-    @RequestMapping(value = "/hello2",method = RequestMethod.GET)
-    public JSONArray hello2( HttpServletResponse response) {
-        System.out.println("ok");
-        List<Object> list1 = new ArrayList<Object>();
+        //List<Object> list1 = new ArrayList<Object>();
         HashMap<String,Object> maps1 = new HashMap<String, Object>();
 
         maps1.put("company", "河南电力");
@@ -47,10 +24,10 @@ public class HelloController {
         maps1.put("tel", "954127004");
         maps1.put("phone", "15056993012");
 
-        list1.add(maps1);
-        JSONArray array = JSONArray.fromObject(list1);
-        response.setHeader("Access-Control-Allow-Origin", "*");
-        return array;
+        //list1.add(maps1);
+        /*JSONArray array = JSONArray.fromObject(list1);
+        response.setHeader("Access-Control-Allow-Origin", "*");*/
+        return maps1;
     }
 
     @RequestMapping(value = "/delUser",method = RequestMethod.POST)
